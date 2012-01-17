@@ -38,6 +38,7 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.LinkLabel = new System.Windows.Forms.LinkLabel();
             this.DirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.ContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             this.toolStripSeparator1,
             this.CloseMenuItem});
             this.ContextMenu.Name = "ContextMenu";
-            this.ContextMenu.Size = new System.Drawing.Size(166, 98);
+            this.ContextMenu.Size = new System.Drawing.Size(166, 76);
             // 
             // CaptureMenuItem
             // 
@@ -131,6 +132,7 @@
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.LinkLabel LinkLabel;
         private System.Windows.Forms.ToolStripMenuItem DirectoryMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
     }
 }
 

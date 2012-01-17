@@ -62,7 +62,7 @@ namespace Slapshot
 
         private void SaveImage(Image image)
         {
-            image.Save(FileName, SaveFormat);
+            image.Save(FilePath, SaveFormat);
         }
     }
 }

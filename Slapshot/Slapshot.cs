@@ -8,6 +8,7 @@ namespace Slapshot
     {
         private string SaveDirectory;
         private ImageFormat SaveFormat;
+        private Screenshot Screen;
 
         public Slapshot()
         {
@@ -19,6 +20,7 @@ namespace Slapshot
         {
             SaveDirectory = ".";
             SaveFormat = ImageFormat.Png;
+            Screen = new Screenshot(SaveDirectory, SaveFormat);
         }
 
         private void Slapshot_SizeChanged(object sender, EventArgs e)
@@ -43,8 +45,8 @@ namespace Slapshot
 
         private void CaptureMenuItem_Click(object sender, EventArgs e)
         {
-            var screenshot = new Screenshot(SaveDirectory, SaveFormat);
-            screenshot.CaptureEntireScreen();
+            MessageBox.Show(Screen.FilePath);
+            Screen.CaptureEntireScreen();
         }
 
         private void CloseMenuItem_Click(object sender, EventArgs e)
@@ -54,7 +56,9 @@ namespace Slapshot
 
         private void DirectoryMenuItem_Click(object sender, EventArgs e)
         {
-
+            FolderBrowser.ShowDialog();
+            SaveDirectory = FolderBrowser.SelectedPath;
+            Screen = new Screenshot(SaveDirectory, SaveFormat);
         }
     }
 }
