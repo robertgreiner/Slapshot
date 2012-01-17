@@ -15,6 +15,8 @@ namespace Slapshot
         public Slapshot()
         {
             InitializeComponent();
+            HotKeyManager.RegisterHotKey(Keys.PrintScreen, 0);
+            HotKeyManager.HotKeyPressed += new EventHandler<HotKeyEventArgs>(HotKeyManager_HotKeyPressed);  
             Initialize();
         }
 
@@ -29,9 +31,21 @@ namespace Slapshot
             SaveFormat = ImageFormat.Png;
             Screen = new Screenshot(SaveDirectory, SaveFormat);
             ShowBaloonTip("Welcome to Slapshot\n" + 
-                "Right click me for more options." + 
-                "\nYour screenshots are being saved to: " +
+                "Right click me for more options.\n\n" + 
+                "Your screenshots are being saved to: \n" +
                 SaveDirectory);
+            
+        }
+
+        void HotKeyManager_HotKeyPressed(object sender, HotKeyEventArgs e)
+        {
+            Screen.CaptureEntireScreen();
+        }
+
+        protected override void SetVisibleCore(bool value)
+        {
+            // Quick and dirty to keep the main window invisible      
+            base.SetVisibleCore(false);
         }
 
         private void Slapshot_SizeChanged(object sender, EventArgs e)
@@ -71,16 +85,17 @@ namespace Slapshot
             Settings.Default.SaveDirectory = SaveDirectory;
             Settings.Default.Save();
             Screen = new Screenshot(SaveDirectory, SaveFormat);
+            var message = "Your screenshots are now being saved to: \n" + Settings.Default.SaveDirectory;
+            ShowBaloonTip(message);
         }
 
         private void SaveDirectoryMenuItem_Click(object sender, EventArgs e)
         {
-            var message = "Your screenshots are being saved to: " + Settings.Default.SaveDirectory;
+            var message = "Your screenshots are being saved to: \n" + Settings.Default.SaveDirectory;
             ShowBaloonTip(message);
-
         }
 
-        private void ShowBaloonTip(string text, int timeout = 5)
+        private void ShowBaloonTip(string text, int timeout = 1)
         {
             ApplicationIcon.BalloonTipText = text;
             ApplicationIcon.ShowBalloonTip(1000);

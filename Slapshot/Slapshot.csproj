@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotKeyEventArgs.cs" />
+    <Compile Include="HotKeyManager.cs" />
+    <Compile Include="KeyModifiers.cs" />
     <Compile Include="Screenshot.cs" />
     <Compile Include="Slapshot.cs">
       <SubType>Form</SubType>
