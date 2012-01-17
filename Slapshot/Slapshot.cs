@@ -28,6 +28,10 @@ namespace Slapshot
             
             SaveFormat = ImageFormat.Png;
             Screen = new Screenshot(SaveDirectory, SaveFormat);
+            ShowBaloonTip("Welcome to Slapshot\n" + 
+                "Right click me for more options." + 
+                "\nYour screenshots are being saved to: " +
+                SaveDirectory);
         }
 
         private void Slapshot_SizeChanged(object sender, EventArgs e)
@@ -71,7 +75,15 @@ namespace Slapshot
 
         private void SaveDirectoryMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Settings.Default.SaveDirectory);
+            var message = "Your screenshots are being saved to: " + Settings.Default.SaveDirectory;
+            ShowBaloonTip(message);
+
+        }
+
+        private void ShowBaloonTip(string text, int timeout = 5)
+        {
+            ApplicationIcon.BalloonTipText = text;
+            ApplicationIcon.ShowBalloonTip(1000);
         }
     }
 }
