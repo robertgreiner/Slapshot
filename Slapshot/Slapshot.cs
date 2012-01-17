@@ -12,8 +12,14 @@ namespace Slapshot
 {
     public partial class Slapshot : Form
     {
+
+        private string SaveDirectory;
+        private ImageFormat SaveFormat;
+
         public Slapshot()
         {
+            SaveDirectory = ".";
+            SaveFormat = ImageFormat.Png;
             InitializeComponent();
         }
 
@@ -39,7 +45,7 @@ namespace Slapshot
 
         private void CaptureMenuItem_Click(object sender, EventArgs e)
         {
-            var screenshot = new Screenshot(".", ImageFormat.Png);
+            var screenshot = new Screenshot(SaveDirectory, SaveFormat);
             screenshot.CaptureEntireScreen();
         }
 
