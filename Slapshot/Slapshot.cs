@@ -19,36 +19,8 @@ namespace Slapshot
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            CaptureEntireScreen();    
-        }
-        
-        private void CaptureEntireScreen()
-        {
-            var bounds = Screen.GetBounds(Point.Empty);
-            ProcessBitmap(bounds);
-        }
-
-        private void CaptureActiveScreen()
-        {
-            var bounds = this.Bounds;
-            ProcessBitmap(bounds);
-        }
-
-        private void ProcessBitmap(Rectangle rectangle)
-        {
-            using (var image = new Bitmap(rectangle.Width, rectangle.Height))
-            {
-                using (var g = Graphics.FromImage(image))
-                {
-                    g.CopyFromScreen(Point.Empty, Point.Empty, rectangle.Size);
-                }
-                SaveImage(image);
-            }
-        }
-
-        private static void SaveImage(Bitmap image)
-        {
-            image.Save("screenshot.png", ImageFormat.Png);
+            var screenshot = new Screenshot();
+            screenshot.CaptureEntireScreen();    
         }
     }
 }
