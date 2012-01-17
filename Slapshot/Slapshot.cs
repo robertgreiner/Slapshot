@@ -19,7 +19,7 @@ namespace Slapshot
 
         private void btnCapture_Click(object sender, EventArgs e)
         {
-            var screenshot = new Screenshot();
+            var screenshot = new Screenshot(".", ImageFormat.Png);
             screenshot.CaptureEntireScreen();    
         }
     }

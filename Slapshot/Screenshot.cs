@@ -13,13 +13,31 @@ namespace Slapshot
     {
         public string SaveDirectory { get; private set; }
         public ImageFormat SaveFormat { get; private set; }
-        public string FileName { get; private set; }
+        public string FileName { get { return BuildFileName(); } }
+        public string FilePath { get { return BuildFilePath(); } }
 
-        public Screenshot()
+        public Screenshot(string saveDirectory, ImageFormat imageFormat)
         {
             SaveDirectory = ".";
-            SaveFormat = ImageFormat.Png;
-            FileName = SaveDirectory + @"\screenshot.png";
+            if (Directory.Exists(saveDirectory))
+            {
+                SaveDirectory = saveDirectory;    
+            }
+            SaveFormat = imageFormat;
+        }
+
+        private string BuildFileName()
+        {
+            var time = DateTime.Now;
+            var name = time.ToString("yyyy-mm-dd_hh.mm.ss");
+            return String.Format("{0}.{1}", name, SaveFormat.ToString()).ToLower();
+        }
+
+        private string BuildFilePath()
+        {
+            var f = new FileInfo(SaveDirectory + "\\" + FileName);
+            return f.FullName;
+        
         }
 
         public void CaptureEntireScreen()

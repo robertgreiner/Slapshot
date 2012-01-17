@@ -14,16 +14,29 @@ namespace Slapshot.Tests
         [Test]
         public void ShouldUseDefaultDirectoryIfInvalidDirectoryIsGiven()
         {
-            var s = new Screenshot();
-            Assert.AreEqual(expected: ".", actual: s.SaveDirectory);
+            var s = new Screenshot("asdfasdfasdfasdfasdfasdfasdfasdfadsf", null);
+            Assert.AreEqual(".", actual: s.SaveDirectory);
         }
 
         [Test]
-        public void ShouldCreateAnImageFileWithSomethingInIt()
+        public void ShouldCreateAFileNameThatEndsWithTheCorrectImageFormatExtension()
         {
-            //var s = new Screenshot(".", ImageFormat.Png);
-            //s.CaptureEntireScreen();
-            //Assert.IsTrue(File.Exists(@".\screenshot.png"));
+            var s = new Screenshot(".", ImageFormat.Png);
+            Assert.IsTrue(s.FileName.EndsWith(".png"));
+        }
+
+        [Test]
+        public void ShouldNotHaveAFileNameWithDirectoryInformation()
+        {
+            var s = new Screenshot(Path.GetTempPath(), ImageFormat.Png);
+            Assert.IsFalse(s.FileName.StartsWith(Path.GetTempPath()));
+        }
+
+        [Test]
+        public void ShouldBuildAValidFilePathToSaveScreenshot()
+        {
+            var s = new Screenshot(Path.GetTempPath(), ImageFormat.Png);
+            Assert.IsTrue(s.FilePath.StartsWith(Path.GetTempPath()));
         }
     }
 }
