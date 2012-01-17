@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
+using Slapshot.Properties;
 
 namespace Slapshot
 {
@@ -19,6 +21,11 @@ namespace Slapshot
         private void Initialize()
         {
             SaveDirectory = ".";
+            if (Directory.Exists(Settings.Default.SaveDirectory))
+            {
+                SaveDirectory = Settings.Default.SaveDirectory;    
+            }
+            
             SaveFormat = ImageFormat.Png;
             Screen = new Screenshot(SaveDirectory, SaveFormat);
         }
@@ -45,7 +52,6 @@ namespace Slapshot
 
         private void CaptureMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Screen.FilePath);
             Screen.CaptureEntireScreen();
         }
 
@@ -58,7 +64,14 @@ namespace Slapshot
         {
             FolderBrowser.ShowDialog();
             SaveDirectory = FolderBrowser.SelectedPath;
+            Settings.Default.SaveDirectory = SaveDirectory;
+            Settings.Default.Save();
             Screen = new Screenshot(SaveDirectory, SaveFormat);
+        }
+
+        private void SaveDirectoryMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Settings.Default.SaveDirectory);
         }
     }
 }

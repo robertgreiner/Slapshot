@@ -39,6 +39,8 @@
             this.LinkLabel = new System.Windows.Forms.LinkLabel();
             this.DirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.SaveDirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,28 +55,30 @@
             // 
             this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CaptureMenuItem,
-            this.DirectoryMenuItem,
             this.toolStripSeparator1,
+            this.SaveDirectoryMenuItem,
+            this.DirectoryMenuItem,
+            this.toolStripSeparator2,
             this.CloseMenuItem});
             this.ContextMenu.Name = "ContextMenu";
-            this.ContextMenu.Size = new System.Drawing.Size(166, 76);
+            this.ContextMenu.Size = new System.Drawing.Size(218, 126);
             // 
             // CaptureMenuItem
             // 
             this.CaptureMenuItem.Name = "CaptureMenuItem";
-            this.CaptureMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.CaptureMenuItem.Size = new System.Drawing.Size(217, 22);
             this.CaptureMenuItem.Text = "CaptureScreen";
             this.CaptureMenuItem.Click += new System.EventHandler(this.CaptureMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(214, 6);
             // 
             // CloseMenuItem
             // 
             this.CloseMenuItem.Name = "CloseMenuItem";
-            this.CloseMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.CloseMenuItem.Size = new System.Drawing.Size(217, 22);
             this.CloseMenuItem.Text = "Exit";
             this.CloseMenuItem.Click += new System.EventHandler(this.CloseMenuItem_Click);
             // 
@@ -100,9 +104,21 @@
             // DirectoryMenuItem
             // 
             this.DirectoryMenuItem.Name = "DirectoryMenuItem";
-            this.DirectoryMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.DirectoryMenuItem.Size = new System.Drawing.Size(217, 22);
             this.DirectoryMenuItem.Text = "Set SaveDirectory";
             this.DirectoryMenuItem.Click += new System.EventHandler(this.DirectoryMenuItem_Click);
+            // 
+            // SaveDirectoryMenuItem
+            // 
+            this.SaveDirectoryMenuItem.Name = "SaveDirectoryMenuItem";
+            this.SaveDirectoryMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.SaveDirectoryMenuItem.Text = "Where are my screenshots?";
+            this.SaveDirectoryMenuItem.Click += new System.EventHandler(this.SaveDirectoryMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(214, 6);
             // 
             // Slapshot
             // 
@@ -133,6 +149,8 @@
         private System.Windows.Forms.LinkLabel LinkLabel;
         private System.Windows.Forms.ToolStripMenuItem DirectoryMenuItem;
         private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
+        private System.Windows.Forms.ToolStripMenuItem SaveDirectoryMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 
