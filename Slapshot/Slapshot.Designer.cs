@@ -33,10 +33,11 @@
             this.ApplicationIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CaptureMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CloseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.CloseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.LinkLabel = new System.Windows.Forms.LinkLabel();
+            this.DirectoryMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,29 +52,30 @@
             // 
             this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CaptureMenuItem,
+            this.DirectoryMenuItem,
             this.toolStripSeparator1,
             this.CloseMenuItem});
             this.ContextMenu.Name = "ContextMenu";
-            this.ContextMenu.Size = new System.Drawing.Size(152, 54);
+            this.ContextMenu.Size = new System.Drawing.Size(166, 98);
             // 
             // CaptureMenuItem
             // 
             this.CaptureMenuItem.Name = "CaptureMenuItem";
-            this.CaptureMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.CaptureMenuItem.Size = new System.Drawing.Size(165, 22);
             this.CaptureMenuItem.Text = "CaptureScreen";
             this.CaptureMenuItem.Click += new System.EventHandler(this.CaptureMenuItem_Click);
-            // 
-            // CloseMenuItem
-            // 
-            this.CloseMenuItem.Name = "CloseMenuItem";
-            this.CloseMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.CloseMenuItem.Text = "Exit";
-            this.CloseMenuItem.Click += new System.EventHandler(this.CloseMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
+            // 
+            // CloseMenuItem
+            // 
+            this.CloseMenuItem.Name = "CloseMenuItem";
+            this.CloseMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.CloseMenuItem.Text = "Exit";
+            this.CloseMenuItem.Click += new System.EventHandler(this.CloseMenuItem_Click);
             // 
             // TitleLabel
             // 
@@ -93,6 +95,13 @@
             this.LinkLabel.TabIndex = 3;
             this.LinkLabel.TabStop = true;
             this.LinkLabel.Text = "http://creatingcode.com";
+            // 
+            // DirectoryMenuItem
+            // 
+            this.DirectoryMenuItem.Name = "DirectoryMenuItem";
+            this.DirectoryMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.DirectoryMenuItem.Text = "Set SaveDirectory";
+            this.DirectoryMenuItem.Click += new System.EventHandler(this.DirectoryMenuItem_Click);
             // 
             // Slapshot
             // 
@@ -121,6 +130,7 @@
         private System.Windows.Forms.ToolStripMenuItem CloseMenuItem;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.LinkLabel LinkLabel;
+        private System.Windows.Forms.ToolStripMenuItem DirectoryMenuItem;
     }
 }
 

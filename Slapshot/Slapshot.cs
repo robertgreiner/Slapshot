@@ -1,31 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Slapshot
 {
     public partial class Slapshot : Form
     {
-
         private string SaveDirectory;
         private ImageFormat SaveFormat;
 
         public Slapshot()
         {
+            InitializeComponent();
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             SaveDirectory = ".";
             SaveFormat = ImageFormat.Png;
-            InitializeComponent();
         }
 
         private void Slapshot_SizeChanged(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
+            if (WindowState == FormWindowState.Minimized)
             {
                 minimizeToTray();
             }
@@ -39,8 +37,8 @@ namespace Slapshot
         private void minimizeToTray()
         {
             ApplicationIcon.Visible = true;
-            this.WindowState = FormWindowState.Minimized;
-            this.ShowInTaskbar = false;
+            WindowState = FormWindowState.Minimized;
+            ShowInTaskbar = false;
         }
 
         private void CaptureMenuItem_Click(object sender, EventArgs e)
@@ -51,7 +49,12 @@ namespace Slapshot
 
         private void CloseMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void DirectoryMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
