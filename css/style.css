@@ -1,0 +1,321 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background: url(../images/body_bg.jpg) 50% 0 repeat #f4f0ed;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color: #525252;
+	line-height: 1.6em;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+.clear {
+	clear:both;
+}
+/*Typography and default*/
+/*---------------------------------------------------------------------------*/
+h1, h2, h3, h4 {
+	color: #3a3a3a;
+	line-height: 1em;
+	font-weight: normal;
+}/*Margin bottom to headings as line-height property do not work well with many browsers in case of cufon*/
+h1 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+h2 {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+h3 {
+	font-size: 18px;
+	margin-bottom: 3px;
+}
+a {
+	color: #c52c02;
+	text-decoration: none;
+}
+p {
+	display: block;
+}
+span {
+	color: #c52c02;
+}
+/*wrapper*/
+/*---------------------------------------------------------------------------*/
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+/*Three columns*/
+/*---------------------------------------------------------------------------*/
+#column_1 {
+	width: 240px;
+	float: left;
+	margin: 20px 19px 0px 0px;
+}
+#column_2 {
+	width: 420px;
+	float: left;
+	margin: 20px 19px 0px 19px; 
+}
+#column_3 {
+	width: 220px;
+	float: left;
+	margin: 20px 0px 0px 19px;
+}
+/*vertical divider*/
+/*---------------------------------------------------------------------------*/
+.divider {
+	background: url(../images/border.jpg) repeat-y;
+	width: 2px;
+	float: left;
+	height: 500px;
+}/*Adjust height of this vertical divider as per heigh of your page*/
+.divider_horizon {
+	background: url(../images/border_horizontal.jpg) repeat-x;
+	width: 960px;
+	height: 2px;
+	margin: 0 auto;
+}
+/*column_1 content*/
+/*---------------------------------------------------------------------------*/
+#column_1 p {
+	text-align: center;
+}
+/*----------logo----------*/
+#logo_bg {
+	background: url(../images/logo_bg.png) no-repeat;
+	width: 180px;
+	height: 180px;
+	margin-left: 30px;
+}
+.logo {
+	margin-left: 32px;
+	margin-top: 45px;
+}
+/*----------tagline----------*/
+.tagline {
+	width: 240px;
+	float: left;
+	font-size: 22px;
+	text-align: center;
+	color: #3a3a3a;
+	margin: 20px 0px 20px 0px;
+}
+/*----------buttons----------*/
+.button_1 {
+	background: url(../images/button_1.png) no-repeat;
+	width: 240px;
+	height: 50px;
+	margin-top: 20px;
+}
+.button_2 {
+	background: url(../images/button_2.png) no-repeat;
+	width: 240px;
+	height: 50px;
+	margin: 15px 0px 5px 0px;
+}
+.button_1 a, .button_2 a {
+	font-size: 26px;
+	text-align: center;
+	color: #ffffff;
+	display: block;
+	padding-top: 12px;
+}
+/*----------link with fancybox----------*/
+a.various {
+	border-bottom: 1px solid #c52c02;
+	font-size: 14px;
+}
+/*none for fancybox*/
+.none {
+	display:none;
+	float: left;
+}
+#details {
+	width: 500px;
+	padding: 30px;
+	background-color: #f4f0ed;
+	color: #565656;
+}
+#details img {
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	border: 1px solid #e8e4e1;
+	background: #f7f5f3;
+	padding: 9px;
+}
+#details p {
+	padding-bottom: 10px;
+}
+#details li {
+	list-style: none;
+	background: url(../images/bullet_arr.png) no-repeat 0 5px;
+	margin: 0;
+	padding-left: 20px;
+	display: block;
+	line-height: 1.8em;
+}
+#details .button_2 {
+	margin-left: 120px;
+}
+/*----------testimonial----------*/
+#testimonial {
+	width: 240px;
+	float: left;
+}
+blockquote {
+	background-image: url(../images/testimonial_bg.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	float: left;
+	text-align: left;
+	font-size:16px;
+	font-style: italic;
+	font-family: Arial;
+	font-weight: bold;
+	padding-left: 30px;
+}
+pre {
+	font-size:12px;
+	color: #888888;
+	float: right;
+	text-align: right;
+	font-family: Arial;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+/*column_2 content*/
+/*---------------------------------------------------------------------------*/
+/*----------video----------*/
+.video {
+	float: left;
+	margin-bottom: 40px;
+}
+.video_img {
+	padding: 9px;
+	border: 1px solid #e8e4e1;
+	background-color: #f7f5f3;
+}
+/*----------feature----------*/
+.feature {
+	width: 420px;
+	float: left;
+	padding-top: 40px;
+}
+.feature li {
+	list-style: none;
+	display: block;
+	background: none;
+	padding-bottom: 20px;
+}
+.feature li img {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+/*column_3 content*/
+/*---------------------------------------------------------------------------*/
+/*----------subscribe----------*/
+#subscribe {
+	width: 220px;
+	float: left;
+	padding: 35px 0px 40px 0px;
+}
+.subscribe {
+	background: url(../images/subscribe_bg.png) no-repeat;
+	width: 220px;
+	height: 35px;
+	float: left;
+	margin-top: 10px;
+}
+.subscribe .field {
+	width:160px;
+	height: 25px;
+	background: none;
+	border: none;
+	font-size:12px;
+	line-height: 2.4em;
+	float: left;
+	font-family: Arial;
+	padding: 5px 0px 5px 10px;
+}
+.subscribe .submit {
+	width: 50px;
+	height: 35px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-indent: -9999px;
+	float: right;
+	font-size: 0;
+	line-height: 0;
+	display: block;
+}
+/*----------gallery----------*/
+ul.gallery {
+}
+ul.gallery li {
+	list-style: none;
+	display: block;
+	position: relative;
+	margin-bottom: 10px;
+}
+ul.gallery li img {
+	border: 1px solid #e8e4e1;
+	background: #f7f5f3;
+	padding: 9px;
+}
+ul.gallery li a span {
+	width: 200px;
+	height: 70px;
+	background-color: rgba(225, 220, 214, 0.8);
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 10;
+	display: none;
+}
+ul.gallery li a span img {
+	width: 16px;
+	height: 16px;
+	border:none;
+	background: none !important;
+	margin-top: 20px;
+	margin-left: 85px;
+}
+/*footer*/
+/*---------------------------------------------------------------------------*/
+#footer {
+	width: 960px;
+	margin: 0 auto;
+	padding: 20px 0px 20px 0px;
+}
+#footer ul {
+	float: left;
+}
+#footer li {
+	list-style: none;
+	background: none;
+	display: inline;
+	float: left;
+	padding-right: 5px;
+}
+#footer p {
+	float: right;
+}
+/*IE6 fix*/
+* html #column_2 {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+* html .divider {
+	width: 2px;
+	float: left;
+	height: 900px;
+	background: url(../images/border.jpg) repeat-y;
+}
